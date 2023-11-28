@@ -1,0 +1,27 @@
+<!-- Exercício 5: Escreva um programa que leia um número do usuário e imprima na tela a tabuada desse número. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>
+      Exercício 5: Escreva um programa que leia um número do usuário e imprima
+      na tela a tabuada desse número.
+    </h1>
+    <script>
+      let number1 = prompt("digite um numero para ver sua tabuada:");
+
+      let result = [];
+
+      for (let i = 0; i < 11; i++) {
+        let result1 = number1 * i;
+        result.push(result1);
+      }
+      alert(`A tabuada de ${number1} é igual a ${result}`);
+    </script>
+  </body>
+</html>

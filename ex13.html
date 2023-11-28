@@ -1,0 +1,30 @@
+<!-- Exercício 13 : Escreva um programa que leia um número do usuário e imprima na tela a tabuada de 1 a 1000. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        Exercício 13 : Escreva um programa que leia um número do usuário e imprima na tela a tabuada de 1 a 1000.
+    </h1>
+    <script>
+        let n1 = parseInt(prompt("Digite um numero:"));
+        for (let i = 0; i < 1001; i++) {
+
+            if (i * 10 == i + 0) {
+                console.log(i)
+            }
+
+            let resultado = `${n1} x ${i} = ${n1 * i}`;
+            document.write(resultado + '<br>');
+        }
+    </script>
+</body>
+
+</html>

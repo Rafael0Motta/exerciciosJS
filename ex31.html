@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        background-color: black;
+    }
+
+    .buttons {
+        margin: 50px 0 0 0;
+        text-align: center;
+    }
+
+    button {
+        padding: 10px 25px;
+        margin: 10px;
+        font-size: 20px;
+        color: black;
+        border: none;
+        border-radius: 10px;
+        background: chartreuse;
+        font-weight: 500;
+        cursor: pointer;
+    }
+
+    button:hover {
+        opacity: 0.8;
+    }
+
+
+    ul {
+        list-style: none;
+        display: grid;
+        grid-template-columns: 350px 350px 350px;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    img {
+        border-radius: 15px;
+        width: 100%;
+    }
+
+    li {
+        margin: 35px 40px;
+        padding: 20px;
+        border-radius: 20px;
+        border: solid green 2px;
+    }
+
+    li p {
+        color: white;
+    }
+
+    .priceItem {
+        font-size: 20px;
+        font-weight: bold;
+        color: green;
+    }
+</style>
+
+<body>
+    <div class="buttons">
+        <button type="button" onclick="mostrarTudo()">Mostrar Tudo <BR> FOREACH</button>
+        <button type="button" onclick="mapear()">Mapear <BR> MAP</button>
+        <button type="button" onclick="somar()">Somar Tudo <BR> REDUCE</button>
+        <button type="button" onclick="filtrar()">Filtrar <BR> FILTER</button>
+    </div>
+    <div class="itens">
+        <ul class="itensList">
+        </ul>
+    </div>
+
+</body>
+
+<script>
+    const menuOptions = [
+        { name: 'X-Salada', price: 30, vegan: false, src: './ASSETS/xsalada.jpeg' },
+        { name: 'X-Bacon', price: 34, vegan: false, src: './ASSETS/xbacon.png' },
+        { name: 'X-Bacon Egg', price: 39, vegan: false, src: './ASSETS/bacon-egg.png' },
+        { name: 'Monstruoso', price: 50, vegan: false, src: './ASSETS/monstruoso.png' },
+        { name: 'Big Vegano', price: 55, vegan: true, src: './ASSETS/xvegan.png' },
+        { name: 'X-Vegan', price: 45, vegan: true, src: './ASSETS/monstruoso-vegan.png' },
+    ]
+
+    const listItens = document.querySelector(".itensList")
+
+    function filtrar() {
+        const filtrar = menuOptions.filter((product) => product.vegan)
+        resultado(filtrar)
+    }
+
+    function somar() {
+        const soma = menuOptions.reduce((acc, menu) => {
+            return acc = acc + menu.price
+        }, 0)
+        listItens.innerHTML = `
+            <li>
+                <p class="nameItems">A soma de todos os produtos equivale a</p>
+                <p class="priceItem">R$ ${soma.toFixed(2)}</p>
+            </li>`;
+
+    }
+
+    function mapear() {
+        const desconto = menuOptions.map((product) => ({
+            ...product,
+            price: product.price * 0.9,
+        }));
+        resultado(desconto)
+
+    }
+
+    function mostrarTudo() {
+        resultado(menuOptions)
+    }
+
+    function resultado(productArry) {
+        newLi = '';
+        productArry.forEach(products => {
+            newLi += `
+            <li>
+                <img class="imgItems" src="${products.src}">
+                <p class="nameItems">${products.name}</p>
+                <p class="priceItem">R$ ${products.price.toFixed(2)}</p>
+            </li>`
+        })
+
+        listItens.innerHTML = newLi;
+    }
+
+</script>
+
+</html>

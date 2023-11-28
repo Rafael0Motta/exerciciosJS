@@ -1,0 +1,30 @@
+<!-- Exercício 09: Escreva um programa que leia DOIS número do usuário e imprima na tela se foi aprovado ou não. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        Exercício 09: Escreva um programa que leia DOIS número do usuário e imprima na tela se foi aprovado ou não.
+    </h1>
+    <script>
+        n1 = parseInt(prompt("Digite a sua PRIMEIRA nota: "));
+        n2 = parseInt(prompt("Digite a sua SEGUNDA nota: "));
+
+        media = (n1 + n2) / 2;
+
+        if (media > 5) {
+            alert("Aprovado")
+        } else {
+            alert("Reprovado")
+        }
+    </script>
+</body>
+
+</html>

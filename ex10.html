@@ -1,0 +1,36 @@
+<!-- Exercício : Escreva um programa que leia dois número do usuário e imprima na tela quem ganhou. Caso o numero seja igual => empate. 
+  Se o numero sorteado seja 0 numero menor vence, caso seja 1 numero maior vence. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>
+      Exercício : Escreva um programa que leia dois número do usuário e imprima na tela quem ganhou.
+    </h1>
+    <script>
+      n1 = parseInt(prompt("Digite um numero: "))/*  2 */
+      n2 = parseInt(prompt("Digite outro numero: ")) /* 1 */
+
+      if(n1 == n2){
+        alert("Empate, reinicie!")
+      }
+
+      let sorteio =  parseInt(Math.random()*2)
+     
+
+      if(sorteio > 0 && n1>n2){
+        alert(`Jogadr ${n1} ganhou n1`)
+      }else { 
+        alert(`Jogador ${n2} ganhou n2`)
+      }
+
+
+
+    </script>
+  </body>
+</html>

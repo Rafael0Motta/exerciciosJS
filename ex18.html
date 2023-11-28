@@ -1,0 +1,47 @@
+<!-- Exercício 18: Escreva um programa leia um numero do usuario e imprima a tabuada de 1 a 100. Com a
+    possibilidade de digitar outro numero, e limpar a tabuada gerada. . -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        Exercício 18: Escreva um programa leia um numero do usuario e imprima a tabuada de 1 a 100. Com a
+        possibilidade de digitar outro numero, e limpar a tabuada gerada. </h1>
+
+        <input type="number" name="number" id="number" placeholder="Digite um numero">
+        <button onclick="enviar()">Enviar</button>
+        <button onclick="resetar()"> Resetar</button>
+
+
+    <div id="output1"></div>
+
+    <script>
+
+        function enviar() {
+            let number = document.querySelector("#number").value; 
+            let showResult = document.querySelector("#output1"); 
+
+            let result = ''; 
+            for (let i = 0; i <= 10; i++) {
+                let multi = number*i;
+               result += number + ' X ' + i + ' = ' + multi + '<br>'; 
+            }
+
+            showResult.innerHTML = result
+        }
+
+        function resetar() {
+            let hideResult = document.querySelector("#output1"); 
+            hideResult.innerHTML = ''
+        }
+    </script>
+</body>
+
+</html>

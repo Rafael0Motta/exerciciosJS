@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Digite numeros separados por , para descobrir a soma do pares</h1>
+    <input type="text" id="numeros" placeholder="Insira os numeros.">
+    <button type="button" onclick="soma()">CLIQUE </button>
+
+    <script>
+        function soma() {
+            let pegaInputValues = document.querySelector('#numeros').value;
+            let arr = pegaInputValues.split(',')
+            let arr2 = [];
+            let soma = 0
+
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] % 2 === 0) {
+                    arr2.push(arr[i]);
+                    soma += arr[i]++
+                }
+            }
+
+            console.log(soma)
+            console.log(arr2)
+
+            alert(`A soma dos numeros é ${soma}, e os numeros pares são esses ${arr2}`)
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!-- Exercício 27:Faça uma calculadora. . -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Exercício 27:Faça uma calculadora </h1>
+    <button onclick="main('+')">+ ADIÇÃO</button>
+    <button onclick="main('-')">- SUBTRAÇÃO</button>
+    <button onclick="main('*')">* MULTIPLICAÇÃO</button>
+    <button onclick="main('/')">/ DIVISÃO</button>
+
+    <p id="result"></p>
+
+    <script>
+        let n1 = prompt("Digite um numero");
+        let result = document.querySelector("#result").innerHTML = n1;
+
+        function main(symbol) {
+            let step1 = iniciaCalculos(symbol);
+            let step2 = calcular(step1[0], step1[1], step1[2])
+            let final = mostraResultado(step2)
+        }
+
+        function iniciaCalculos(symbol) {
+            let n1 = parseFloat(document.querySelector("#result").innerHTML);
+            let n2 = parseFloat(prompt("Digite outro numero"));
+            return [symbol, n1, n2];
+        }
+
+        function calcular(symbol, n1, n2) {
+            if (isNaN(n1) || isNaN(n2)) {
+                return ("Digite um numero valido e positivo!")
+            }
+
+            resultConta = null;
+
+            switch (symbol) {
+                case "+":
+                    resultConta = n1 + n2;
+                    break;
+                case "-":
+                    resultConta = n1 - n2;
+                    break;
+                case "/":
+                    resultConta = n1 / n2;
+                    break;
+                case "*":
+                    resultConta = n1 * n2;
+                    break;
+            }
+            return resultConta;
+        }
+
+        function mostraResultado(result) {
+            let show = document.querySelector('#result');
+            show.innerHTML = result;
+        }
+    </script>
+</body>
+
+</html>

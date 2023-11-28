@@ -1,0 +1,31 @@
+<!-- Exercício : Escreva um programa que leia um número do usuário e imprima na tela se foi aprovado. Contudo se uma das notas for 0 reprova automaticamente . -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        Exercício : Escreva um programa que leia um número do usuário e imprima na tela se foi aprovado. Contudo se uma
+        das notas for 0 reprova automaticamente .
+    </h1>
+    <script>
+        let n1 = parseFloat(prompt("Digite a sua nota"))
+        let n2 = parseFloat(prompt("Digite a sua segunda nota"))
+
+        media = (n1 + n2) / 2;
+
+        if (n1 && n2 > 0 && media > 5) {
+            alert("Aprovado");
+        } else {
+            alert("Reprovado");
+        };
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!-- Exercício 15 : Escreva um programa que leia um número do usuário e imprima na tela o valor a vista e parcelado . -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        Exercício 15 : Escreva um programa que leia um número do usuário e imprima na tela o valor a vista e parcelado .
+    </h1>
+    <script>
+        let preco = parseFloat(prompt("Digite o valor total do produto:"));
+        let formaPagamento = prompt("Digite a forma de pagamento: \n 1 = A vista\n 2 = parcelado.");
+        let descontoVista = preco * 0.10;
+
+        if (formaPagamento == 2) {
+            let qtdParcela = prompt("Digite a quantidade de vezes em que o produto será parcelado:");
+            let result = preco/qtdParcela
+            alert(`Preço R$${preco} \n Valor em ${qtdParcela} R$${result.toFixed(2)}`);
+        }else{ 
+            alert(`Preço R$${preco} \n Á vista R$${preco - descontoVista}`);
+        }
+    </script>
+</body>
+
+</html>
